@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Collector</title>
-    <link href="assets\css\style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src= "assets\javascript\games.js"></script>
+    <script type="text/javascript" src= "assets/javascript/games.js"></script> 
 </head>
 
 <body>
@@ -17,26 +17,35 @@
     </div>
     <div>
         <p>You will be given a random number at the start of the game.</p>
-        <p> There are four crystals below. By clicking on a crystal you will add a speciffic amount of points to your total score.</p>
-        <p>You win the game by matching your total score to a random number, you lose the game if your total score goes above the random number.</p>
+        <p> There are four crystals below. By clicking on a crystal you will add a speciffic amount of points to your
+            total score.</p>
+        <p>You win the game by matching your total score to a random number, you lose the game if your total score goes
+            above the random number.</p>
         <p>The value of each crystal is hidden from you until you cick on it.</p>
         <p>Each time when the game starts, the game will change the value of each crystal.</p>
     </div>
 
     <container>
-    <div id= "randomNumber"></div>
+        <div id="randomNumber"></div>
+        <div>
+            <p id="Wins"></p>
+            <p id="losses"></p>
+        </div>
+    </container>
+
     <div>
-        <p id= "Wins"></p>
-        <p id= "losses"></p>
+
     </div>
-</container>
+    <img class="shapeImage" src="assets/images/pic.4.png" style: width="100" alt="crystal1">
+    <img class="shapeImage" src="assets/images/square.png" style: width="100" alt="crystal2">
+    <img class="shapeImage" src="assets/images/pic3.png" style: width="100" alt="crystal3">
+    <img class="shapeImage" src="assets/images/pic2.png" style: width="100" alt="crystal4">
+    <div>
+        <p>Your total score is:</p>
+    </div>
 
-<div>shapes</div>
+    <div id="totalScore"></div>
 
-<div>
-    <p>YOur total score is:</p>
-</div>
-
-<div id= "totalScore"></div>
 </body>
+
 </html>
