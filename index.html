@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Collector</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src= "assets/javascript/games.js"></script> 
+
 </head>
 
 <body>
@@ -21,31 +20,34 @@
             total score.</p>
         <p>You win the game by matching your total score to a random number, you lose the game if your total score goes
             above the random number.</p>
-        <p>The value of each crystal is hidden from you until you cick on it.</p>
+        <p>The value of each crystal is hidden from you until you click on it.</p>
         <p>Each time when the game starts, the game will change the value of each crystal.</p>
     </div>
 
  
-        <div id="randomNumber"></div>
         <div>
-            <p id="Wins"></p>
-            <p id="losses"></p>
+        <p id="targetScore">Target Score: </p>
+        </div>
+
+        <div>
+            <p id="Wins">Wins</p>
+            <p id="losses">Losses</p>
         </div>
    
 
     <div>
 
     </div>
-    <img class="shapeImage" src="assets/images/pic.4.png" alt="crystal1">
-    <img class="shapeImage" src="assets/images/square.png" alt="crystal2">
-    <img class="shapeImage" src="assets/images/pic3.png" alt="crystal3">
-    <img class="shapeImage" src="assets/images/pic2.png" alt="crystal4">
+    <img class="shapeImage" src="assets/images/pic.4.png" alt="crystal1" id = "one">
+    <img class="shapeImage" src="assets/images/square.png" alt="crystal2" id = "two">
+    <img class="shapeImage" src="assets/images/pic3.png" alt="crystal3" id = "three">
+    <img class="shapeImage" src="assets/images/pic2.png" alt="crystal4" id = "four">
     <div>
-        <p>Your total score is:</p>
+        <p id="yourScore">Your total score is: </p>
     </div>
 
-    <div id="totalScore"></div>
-
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src= "assets/javascript/games.js"></script> 
 </body>
 
 </html>
