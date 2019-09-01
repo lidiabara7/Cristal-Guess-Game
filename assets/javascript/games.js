@@ -26,67 +26,78 @@ var crystal = {
 var crystalScore = 0;
 var targetScore = 0;
 
-var wins = 0;
-var losses = 0;
+
+var wins = 1;
+var losses = 1;
 // ==========================================================
 //this function to return a value between the min  and the max so we do ot need to do the math.floor. random for each of the crystals or the target number. 
-var getRandom = function (max, min) {
+var getRandom = function (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 var startgame = function () {
-    var crystalScore = 0;
+    crystalScore = 0;
 
     //set the new target score between 
-    var targeteScore = getRandom(120, 19)
+   targetScore = getRandom(19, 120)
 
     //set diffent values for the crystals
-    crystal.one.value = getRandom(12, 1);
-    crystal.two.value = getRandom(12, 1);
-    crystal.three.value = getRandom(12, 1);
-    crystal.four.value = getRandom(12, 1);
+    crystal.one.value = getRandom(1, 12);
+    crystal.two.value = getRandom(1, 12);
+    crystal.three.value = getRandom(1, 12);
+    crystal.four.value = getRandom(1, 12);
 
     console.log("============")
-    console.log("target score: " + targeteScore)
+    console.log("target score: " + targetScore)
     console.log("1" + crystal.one.value + "\n" + "2" + crystal.two.value + "\n" + "3" + crystal.three.value + "\n" + "4" + crystal.four.value)
     console.log("==============")
 
     //change html to reflect the target score and the changes in the current score
-    $("#yourScore").append("" + crystalScore);
-    $("#targetScore").append("" + targeteScore);
+    $("#yourScore").html("Your total score is: " + crystalScore);
+    $("#targetScore").html("Target score: " + targetScore);
 
 }
+
+
+
+//a function that passes the crystals so that the value of the crystals is added
+var addValue = function (crystal) {
+    crystalScore = crystalScore + crystal.value;
+
+    
+    //change html to reflext current score
+    $("#yourScore").html("Your total score is: " + crystalScore);
+
+    console.log("your score" + crystalScore)
+
+    checkScore();
+  
+}
+
+var checkScore = function(){
+    console.log("targetScore" + targetScore + "\n" + "crystalScore" + crystalScore)
+
+    if (targetScore === crystalScore) {
+        $("#wins").html("Wins: " + wins)
+        alert("Congratulations! You won!");
+        wins++;
+        startgame();
+    }
+    else if (crystalScore > targetScore) {
+        $("#losses").html("Loss count: " + losses);
+        alert("You lost. Please try again");
+        losses++;
+        startgame();
+
+    }
+}
+// // main process===============================================
+//on chick events for each of the crystals so that the value of each of the crysstals is added depending on whitch crystal clicked.
 
 
 //invokin the function startgame to start the game
 startgame();
 
-//a function that passes the crystals so that the value of the crystals is added
-var addValue = function (crystal) {
-    crystalScore = crystalScore + crystal.value;
-    console.log("your score" + crystalScore)
-
-
-    //change html to reflext current score
-    $("#yourScore").html(crystalScore);
-        if (targetScore === crystalScore) {
-            alert("Congratulations! You won!");
-            wins++;
-            $("#wins").html(wins)
-            startgame();
-        }
-        else if (crystalScore > targetScore) {
-            alert("You lost. Please try again");
-            losses++;
-            $("#losses").html(losses);
-            startgame();
-        }
-
-}
-
-
-// // main process===============================================
-//on chick events for each of the crystals so that the value of each of the crysstals is added depending on whitch crystal clicked.
 $("#one").on("click", function () {
     addValue(crystal.one);
 
@@ -103,3 +114,4 @@ $("#three").on("click", function () {
 $("#four").on("click", function () {
     addValue(crystal.four);
 });
+

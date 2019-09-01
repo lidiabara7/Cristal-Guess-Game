@@ -1,9 +1,22 @@
 body{
-background-color:palegreen
+    background-image: linear-gradient(rgb(183, 0, 255), rgb(0, 255, 255));
+}
+
+html{
+    background-image: linear-gradient(rgb(0, 255, 255), rgb(183, 0, 255));
 }
 
 img{
     width: 100px;
     height: 75px;
+}
 
+.darkText {
+    font-weight: bold
+}
+
+.card:hover,
+img:hover {
+    box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.24),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }
