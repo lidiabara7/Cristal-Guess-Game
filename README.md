@@ -5,4 +5,4 @@ The point of the game is to match the value of the crystals to the value of a ra
 When the game begins again, the player will see a new random number. Also, all the crystals will have four new hidden values. The app will show the number of games the player wins and loses. 
 When the page is refreshed the user's score (and score counter) will reset to zero.
 
-This app was developed with HTML, CSS, and Javascrip.
+This app was developed with HTML, CSS, and Javascript.
